@@ -109,5 +109,8 @@ class RegisteredCourse(models.Model):
         choices=Course.choices,
         # default=Course.UIUX_DESIGN
     )
-    
+
     reason = models.TextField()
+
+    def __str__(self) -> str:
+        return f'{self.course}: {self.user.email}'
