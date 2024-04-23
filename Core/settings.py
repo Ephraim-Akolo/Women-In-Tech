@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "corsheaders",
+    "website.apps.WebsiteConfig",
     
 ]
 
