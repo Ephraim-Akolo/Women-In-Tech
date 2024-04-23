@@ -1,0 +1,17 @@
+
+###
+PUT http://127.0.0.1:8000/api/v1/register/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "ephraimakolo2017+1@gmail.com",
+    "first_name": "akolo",
+    "last_name": "jonah",
+    "age": "30",
+    "reason": "",
+    "uiux_design":true
+}
+
+
+###
