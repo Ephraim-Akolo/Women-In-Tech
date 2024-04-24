@@ -39,6 +39,19 @@ CORS_ALLOW_CREDENTIALS = True
 
 AUTH_USER_MODEL = 'website.User'
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Women In Tech',
+    'DESCRIPTION': 'Women In Tech Registration Backend',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "corsheaders",
+    'drf_spectacular',
     "website.apps.WebsiteConfig",
     
 ]
