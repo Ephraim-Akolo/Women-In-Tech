@@ -66,7 +66,7 @@ class User(AbstractUser):
             'subject': subject,
             'htmlbody': message
         }
-        return self.send_mail(**kwargs)
+        return self._send_mail(**kwargs)
     
     # def email_user_otp(self, token):
     #     return self.email_user(
@@ -75,7 +75,7 @@ class User(AbstractUser):
     #         from_email='noreply@xnexd.io'
     #     )
 
-    def send_mail(self, url:str, authorization:str, from_email:str, to_emails_names:list[tuple], subject:str, htmlbody:str):
+    def _send_mail(self, url:str, authorization:str, from_email:str, to_emails_names:list[tuple], subject:str, htmlbody:str):
         header = {
             'Authorization': authorization,
             'Accept': 'application/json',

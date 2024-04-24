@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from website.models import User, RegisteredCourse
+from .html import html
 
 
 class RegistrationFormSerializer(serializers.ModelSerializer):
@@ -29,6 +30,9 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
         user = User.objects.create(email=email, first_name=first_name, last_name=last_name, age=age)
         reg_course = RegisteredCourse.objects.create(user=user, course=selected_course, reason=reason)
         user.course = reg_course.course
+        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}', from_email='info@paritie.com'))
+        if not sent:
+            print(msg)
         return user
     
     def update(self, user:User, validated_data):
@@ -53,6 +57,9 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
         except RegisteredCourse.DoesNotExist:
             reg_course = RegisteredCourse.objects.create(user=user, course=selected_course, reason=reason)
         user.course = reg_course.course
+        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}', from_email='info@paritie.com'))
+        if not sent:
+            print(msg)
         return user
     
     def get_selected_course(self, uiux_design, data_analysis):
