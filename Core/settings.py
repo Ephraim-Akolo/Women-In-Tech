@@ -27,11 +27,11 @@ load_dotenv(BASE_DIR / '.env', override=True)
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-*838@l=1uze&inisus)i)a&#$kdme%%*ekhi2e(q@j!ygz-gtr")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", True)
+DEBUG = bool(os.getenv("DEBUG", True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [i for i in os.getenv('ALLOWED_HOSTS', '').split(' ') if i] 
 
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [i for i in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(' ') if i]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
