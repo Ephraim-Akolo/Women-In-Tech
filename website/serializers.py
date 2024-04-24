@@ -30,7 +30,7 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
         user = User.objects.create(email=email, first_name=first_name, last_name=last_name, age=age)
         reg_course = RegisteredCourse.objects.create(user=user, course=selected_course, reason=reason)
         user.course = reg_course.course
-        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}', from_email='info@paritie.com'))
+        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}'), from_email='noreply@xnexd.io') #'info@paritie.com'
         if not sent:
             print(msg)
         return user
@@ -57,7 +57,7 @@ class RegistrationFormSerializer(serializers.ModelSerializer):
         except RegisteredCourse.DoesNotExist:
             reg_course = RegisteredCourse.objects.create(user=user, course=selected_course, reason=reason)
         user.course = reg_course.course
-        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}', from_email='info@paritie.com'))
+        sent, msg = user.email_user(subject="Women in Tech", message=html.format(name=f'{first_name} {last_name}'), from_email='noreply@xnexd.io') #'info@paritie.com'
         if not sent:
             print(msg)
         return user

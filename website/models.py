@@ -55,7 +55,7 @@ class User(AbstractUser):
     def __str__(self):
         return self.email
     
-    def email_user(self, subject: str, message: str, from_email: str = ..., **kwargs):
+    def email_user(self, subject: str, message: str, from_email: str):
         zep2mail = os.getenv('ZEPTOMAIL_URL')
         zep2mail_auth = os.getenv('ZEPTOMAIL_AUTH_KEY')
         kwargs = {
