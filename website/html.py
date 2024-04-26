@@ -4,18 +4,17 @@ html= '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Women in Tech Program</title>
+    <title>Female UI/UX and Data Analysis Bootcamp</title>
 </head>
 <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
 
     <div style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 10px;">
-        <h2 style="color: #333;">Welcome to the Women in Tech Program!</h2>
-        <p style="color: #666;">Dear {name},</p>
-        <p style="color: #666;">Thank you for registering for the Women in Tech Program at Paritie Dynamic Enterprise Limited! We're excited to have you join us.</p>
+        <h2 style="color: #333;">Female UI/UX and Data Analysis Bootcamp</h2>
+        <p style="color: #666;">Hello {name},</p>
+        <p style="color: #666;">Your application for the UI/UX and Data Analysis Bootcamp has been received. </p>
         
-        <p style="color: #666;">If you have any questions or need assistance, feel free to contact us at info@paritie.com or +234 817 624 1972.</p>
-        <p style="color: #666;">We look forward to embarking on this journey together!</p>
-        <p style="color: #666;">Best regards, HR<br>Paritie Dynamic Enterprise Limited</p>
+        <p style="color: #666;">Please note that your application is currently under review and you will be contacted if your application is successful.</p>
+        <p style="color: #666;">Best regards, Mkar Sylvia<br>For: Female UI/UX and Data Analysis Bootcamp Team</p>
     </div>
 
 </body>
